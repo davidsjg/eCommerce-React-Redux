@@ -20,11 +20,9 @@ function App() {
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
 
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<HomeScreen />} />
-            <Route path="/product/:id" element={<ProductScreen />} />
-            <Route path="/cart" element={<CartScreen />} />
-          </Route>
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="/cart" element={<CartScreen />} />
         </Routes>
       </>
     </Router>
