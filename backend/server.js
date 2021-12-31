@@ -1,11 +1,17 @@
-require("dotenv").config();
 const express = require("express");
+
+const mongoose = require("mongoose");
+const app = express();
+const PORT = process.env.PORT || 3053;
 const connectDB = require("./config/db");
 
-connectDB();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-const app = express();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
-const PORT = process.env.PORT || 3051;
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/eCommerceDB");
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
