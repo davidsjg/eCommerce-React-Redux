@@ -15,13 +15,11 @@
   },
   {
      "name": "Canon EOS -1D",
-     "imageUrl": [
-        "https://images.unsplash.com/photo-1474138452695-d27840ebf07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-        "https://images.unsplash.com/photo-1474138452695-d27840ebf07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-     ],
      "description": "Canon camera that lets you take noir pictures of your cat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque deserunt repudiandae perferendis quidem modi temporibus tempore nemo deleniti voluptas! Eos nulla dolore unde mollitia, iusto velit adipisci! Natus perferendis ut repellendus doloremque minima similique quae voluptatum facilis dignissimos, quo deserunt rerum amet quos possimus minus laborum tempora nihil nesciunt earum!",
      "price": 1300,
-     "countInStock": 5
+     "countInStock": 5,
+     "imageUrl": "https://images.unsplash.com/photo-1474138452695-d27840ebf07e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
+  
   },
   {
      "name": "Amazon Alexa",
