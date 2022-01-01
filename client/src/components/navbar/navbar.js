@@ -5,7 +5,9 @@ function Navbar({ click }) {
   return (
     <nav className={styles["navbar"]}>
       <div className={styles["navbar__logo"]}>
-        <h2>MERN Shopping Cart</h2>
+        <Link to="/">
+          <h2>MERN Shopping Cart</h2>
+        </Link>
       </div>
       <ul className={styles["navbar__links"]}>
         <li>
