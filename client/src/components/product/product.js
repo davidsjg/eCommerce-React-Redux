@@ -2,6 +2,8 @@ import styles from "./product.module.css";
 import { Link } from "react-router-dom";
 
 function Product({ imageUrl, name, price, description, productId }) {
+  console.log(productId);
+
   return (
     <div className={styles["product"]}>
       <img src={imageUrl} alt={name} />

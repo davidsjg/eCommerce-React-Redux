@@ -1,7 +1,7 @@
 import styles from "./ProductScreen.module.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 //Actions
 import { getProductDetails } from "../../redux/actions/productActions";
@@ -10,20 +10,24 @@ import { addToCart } from "../../redux/actions/cartActions";
 function ProductScreen() {
   const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { id } = useParams();
-
-  console.log(id);
 
   const productDetails = useSelector((state) => state.getProductDetails);
   const { loading, error, product } = productDetails;
 
   useEffect(() => {
-    console.log(id);
     if (product && id !== product.id) {
       dispatch(getProductDetails(id));
     }
   }, [dispatch]);
+
+  const addToCartHandler = () => {
+    console.log(product);
+    dispatch(addToCart(product._id, qty));
+    navigate("/cart");
+  };
 
   return (
     <div className={styles["productscreen"]}>
@@ -65,7 +69,9 @@ function ProductScreen() {
                 </select>
               </p>
               <p>
-                <button type="button">Add to Cart</button>
+                <button type="button" onClick={addToCartHandler}>
+                  Add to Cart
+                </button>
               </p>
             </div>
           </div>

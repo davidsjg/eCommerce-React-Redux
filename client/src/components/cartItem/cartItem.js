@@ -1,24 +1,36 @@
 import styles from "./cartItem.module.css";
 import { Link } from "react-router-dom";
 
-function CartItem() {
+function CartItem({ item, qtyChangeHandler }) {
+  console.log(item);
   return (
     <div className={styles["cartitem"]}>
       <div className={styles["cartitem__image"]}>
-        <img
-          src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
-          alt="product image"
-        />
+        <Link
+          to={`/product/${item.products}`}
+          className={styles["cartitem__name"]}
+        >
+          <img src={item.imageUrl} alt={item.name} />
+        </Link>
       </div>
-      <Link to={`/product/${111}`} className={styles["cartitem__name"]}>
-        <p>Product 1</p>
+      <Link
+        to={`/product/${item.products}`}
+        className={styles["cartitem__name"]}
+      >
+        <p>{item.name}</p>
       </Link>
-      <p className={styles["cartitem__price"]}>$499.99</p>
-      <select className={styles["cartitem__select"]}>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
+      <p className={styles["cartitem__price"]}>${item.price}</p>
+      <select
+        className={styles["cartitem__select"]}
+        value={item.qty}
+        onChange={(e) => qtyChangeHandler(item.products, e.target.value)}
+      >
+        {[...Array(item.countInStock).keys()].map((x) => (
+          <option key={x + 1} value={x + 1}>
+            {x + 1}
+          </option>
+        ))}
+        ,
       </select>
 
       <button className={styles["cartitem__deleteBtn"]}>
