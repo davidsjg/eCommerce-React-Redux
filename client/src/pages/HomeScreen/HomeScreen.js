@@ -32,8 +32,8 @@ function HomeScreen() {
           products.map((product) => {
             return (
               <Product
-                key={product.id}
-                productId={product.id}
+                key={product._id}
+                productId={product._id}
                 name={product.name}
                 price={product.price}
                 description={product.description}

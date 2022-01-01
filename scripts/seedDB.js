@@ -11,7 +11,7 @@ const productSeed = [
     description:
       "Playstation 5, an impossible console to buy, is now not available! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque deserunt repudiandae perferendis quidem modi temporibus tempore nemo deleniti voluptas! Eos nulla dolore unde mollitia, iusto velit adipisci! Natus perferendis ut repellendus doloremque minima similique quae voluptatum facilis dignissimos, quo deserunt rerum amet quos possimus minus laborum tempora nihil nesciunt earum!",
     price: 499,
-    countInStock: 15,
+    countInStock: 0,
     imageUrl:
       "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
   },
