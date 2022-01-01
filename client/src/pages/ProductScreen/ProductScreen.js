@@ -24,7 +24,6 @@ function ProductScreen() {
   }, [dispatch]);
 
   const addToCartHandler = () => {
-    console.log(product);
     dispatch(addToCart(product._id, qty));
     navigate("/cart");
   };
