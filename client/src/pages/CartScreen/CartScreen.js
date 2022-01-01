@@ -21,6 +21,14 @@ function CartScreen() {
     dispatch(removeFromCart(id));
   };
 
+  const getCartCount = () => {
+    return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+  };
+
+  const getCartSubtotal = () => {
+    return cartItems.reduce((price, item) => item.price * item.qty + price, 0);
+  };
+
   return (
     <div className={styles["cartscreen"]}>
       <div className={styles["cartscreen__left"]}>
@@ -43,8 +51,8 @@ function CartScreen() {
       </div>
       <div className={styles["cartscreen__right"]}>
         <div className={styles["cartscreen__info"]}>
-          <p>Subtotal (0) items</p>
-          <p>Price: $499.99</p>
+          <p>Subtotal ({getCartCount()}) items</p>
+          <p>Price: $({getCartSubtotal().toFixed(2)})</p>
         </div>
         <div>
           <button>Proceed to Checkout</button>
