@@ -16,30 +16,32 @@ function HomeScreen() {
   const { products, loading, error } = getProducts;
 
   useEffect(() => {
-    API.getProducts().then((data) => {
-      console.log(data);
-    });
-  }, []);
-
-  // useEffect(() => {
-  //   dispatch(listProducts());
-  // }, [dispatch]);
+    dispatch(listProducts());
+  }, [dispatch]);
 
   return (
     <div className={styles["homescreen"]}>
       <h2 className={styles["homescreen__title"]}></h2>
 
       <div className={styles["homescreen__products"]}>
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
-        <Product />
+        {loading ? (
+          <h2>loading...</h2>
+        ) : error ? (
+          <h2>{error}</h2>
+        ) : (
+          products.map((product) => {
+            return (
+              <Product
+                key={product.id}
+                productId={product.id}
+                name={product.name}
+                price={product.price}
+                description={product.description}
+                imageUrl={product.imageUrl}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );
