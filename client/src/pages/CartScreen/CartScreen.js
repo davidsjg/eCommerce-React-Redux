@@ -41,7 +41,7 @@ function CartScreen() {
         ) : (
           cartItems.map((product) => (
             <CartItem
-              key={product.id}
+              key={product.products}
               item={product}
               qtyChangeHandler={qtyChangeHandler}
               removeItemCart={removeItemCart}
