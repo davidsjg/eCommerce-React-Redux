@@ -1,7 +1,7 @@
 import styles from "./cartItem.module.css";
 import { Link } from "react-router-dom";
 
-function CartItem({ item, qtyChangeHandler }) {
+function CartItem({ item, qtyChangeHandler, removeItemCart }) {
   console.log(item);
   return (
     <div className={styles["cartitem"]}>
@@ -33,7 +33,10 @@ function CartItem({ item, qtyChangeHandler }) {
         ,
       </select>
 
-      <button className={styles["cartitem__deleteBtn"]}>
+      <button
+        className={styles["cartitem__deleteBtn"]}
+        onClick={() => removeItemCart(item.products)}
+      >
         <i className="fas fa-trash"></i>
       </button>
     </div>

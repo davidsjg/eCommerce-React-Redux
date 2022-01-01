@@ -3,7 +3,7 @@ import styles from "./CartScreen.module.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { addToCart } from "../../redux/actions/cartActions";
+import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
 
 function CartScreen() {
   const dispatch = useDispatch();
@@ -14,6 +14,11 @@ function CartScreen() {
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
+  };
+
+  const removeItemCart = (id) => {
+    console.log(id);
+    dispatch(removeFromCart(id));
   };
 
   return (
@@ -31,6 +36,7 @@ function CartScreen() {
               key={product.id}
               item={product}
               qtyChangeHandler={qtyChangeHandler}
+              removeItemCart={removeItemCart}
             />
           ))
         )}

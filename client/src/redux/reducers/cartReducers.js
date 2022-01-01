@@ -22,9 +22,10 @@ export const cartReducers = (state = { cartItems: [] }, action) => {
       }
 
     case actionTypes.REMOVE_FROM_CART:
+      console.log(state.cartItems);
       return {
         ...state,
-        cartItems: state.cartItems.filter((x) => x.product !== item.product),
+        cartItems: state.cartItems.filter((x) => x.products !== action.payload),
       };
 
     default:
