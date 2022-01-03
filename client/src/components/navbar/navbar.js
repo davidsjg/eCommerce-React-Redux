@@ -14,7 +14,7 @@ function Navbar({ click }) {
     <nav className={styles["navbar"]}>
       <div className={styles["navbar__logo"]}>
         <Link to="/">
-          <h2>MERN Shopping Cart</h2>
+          <h2>MERN eCommerce Store</h2>
         </Link>
       </div>
       <ul className={styles["navbar__links"]}>
